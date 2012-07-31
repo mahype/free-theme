@@ -56,17 +56,17 @@
 									<tr>
 										<td>Width</td>
 										<td>
-											<input type="text" name="name" />
-											<select name="unit">
-												<option value="em">em</option>
-												<option value="percentage">%</option>
+											<input type="text" name="width" />
+											<select name="width-unit">
+												<option>%</option>
+												<option>em</option>
 											</select>
 										</td>
 									</tr>
 									<tr>
 										<td>Float</td>
 										<td>
-											<select name="float">
+											<select name="float" class="text">
 												<option value="left">left</option>
 												<option value="right">right</option>
 												<option value="none">none</option>
@@ -80,7 +80,7 @@
 										
 				</div>
 			</div>
-		</div>		
+		</div>
 		
 		<!-- Actions after scripts //-->
 		<?php do_action( 'rs_theme_admin_page_end' ); ?>

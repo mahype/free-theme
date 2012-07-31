@@ -90,13 +90,16 @@ div.theme-options-right {
 .theme-options-element-title .box-name-arrow{
     margin-right: -10px;
     margin-top: -10px;
+    z-index: 999;
+    cursor: pointer;
 }
 .theme-options-element-content{
     background-color: #FCFCFC;
     border-bottom: 1px solid #DFDFDF;
     border-left: 1px solid #DFDFDF;
-    border-radius: 3px 3px 3px 3px;
+    border-top: 1px solid #DFDFDF;
     border-right: 1px solid #DFDFDF;
+    border-radius: 3px 3px 3px 3px;
     margin: 0 auto 20px;
     min-height: 50px;
     padding: 15px;
