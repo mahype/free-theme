@@ -92,15 +92,19 @@ div.theme-options-right {
     margin-top: -10px;
 }
 .theme-options-element-content{
-	background-color: #FCFCFC;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-color: #DFDFDF;
-    border-style: none solid solid;
-    border-width: 0 1px 1px;
+    background-color: #FCFCFC;
+    border-bottom: 1px solid #DFDFDF;
+    border-left: 1px solid #DFDFDF;
+    border-radius: 3px 3px 3px 3px;
+    border-right: 1px solid #DFDFDF;
     margin: 0 auto 20px;
     min-height: 50px;
     padding: 15px;
+    position: absolute;
+    display:none;
+}
+.show-settings{
+	 display:block;
 }
 /* Hiding if element is in Element box */
 .theme-options-liquid-right .theme-options-element-title .box-name-arrow, .theme-options-liquid-right .theme-options-element-content{
