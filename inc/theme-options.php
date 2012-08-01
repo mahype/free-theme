@@ -5,6 +5,13 @@
 	<div class="rs-theme-options">
 		<h2><?php _e( 'Theme Options' ) ?></h2>
 		
+		<ul class="subsubsub">
+			<li><a class="current" href="#">Theme Layout</a> |</li>
+			<li><a href="#">Color Schemes</a> |</li>
+			<li><a href="#">CSS Editor</a> |</li>
+			<li><a href="#">Import/Export</a> |</li>
+		</ul>
+		
 		<form name="theme-options">
 			
 		<!-- Template constructor //-->
@@ -14,7 +21,9 @@
 					<div class="box-name-arrow"><br /></div>
 					<h3>Seiten</h3>
 				</div>
-				<div class="theme-options-holder"></div>
+				<div class="theme-options-holder">
+					<div class="clear"></div>
+				</div>
 			</div>
 		</div>
 		
@@ -33,11 +42,14 @@
 					
 					<!-- Menu element //-->
 					<div class="theme-options-element">
+						
 						<div class="theme-options-element-title">
-							<div class="box-name-arrow"><br /></div>
+							<div class="box-settings"><br /></div>
 							Menu
 						</div>
+						
 						<div class="theme-options-element-content">
+							<div class="box-close"><br /></div>
 							<table>
 								<tbody>
 									<tr>
@@ -50,16 +62,22 @@
 										</td>
 									</tr>
 									<tr>
-										<td>Name</td>
-										<td><input type="text" name="name" /></td>
-									</tr>
-									<tr>
 										<td>Width</td>
 										<td>
 											<input type="text" name="width" />
 											<select name="width-unit">
-												<option>%</option>
 												<option>em</option>
+												<option>%</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>Height</td>
+										<td>
+											<input type="text" name="height" />
+											<select name="height-unit">
+												<option>em</option>
+												<option>%</option>
 											</select>
 										</td>
 									</tr>
@@ -67,11 +85,19 @@
 										<td>Float</td>
 										<td>
 											<select name="float" class="text">
+												<option value="none">none</option>
 												<option value="left">left</option>
 												<option value="right">right</option>
-												<option value="none">none</option>
 											</select>
 										</td>
+									</tr>
+									<tr>
+										<td>Class</td>
+										<td><input type="text" name="css-class" /></td>
+									</tr>
+									<tr>
+										<td>ID</td>
+										<td><input type="text" name="css-class" /></td>
 									</tr>
 								</tbody>
 							</table>
