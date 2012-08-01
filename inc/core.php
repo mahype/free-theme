@@ -15,7 +15,7 @@ class rs_theme{
 		add_action( 'customize_register', array( $this, 'theme_customizer' ) );
 		add_action( 'admin_menu',  array( $this, 'admin_menu' ));
 		
-		if( 'rs-theme-options' == $_GET['page'] ):
+		if( 'free-theme-options' == $_GET['page'] ):
 			add_action( 'admin_init',  array( $this, 'admin_css' ));
 			add_action( 'admin_init',  array( $this, 'admin_js' ));
 		endif;
@@ -63,7 +63,8 @@ class rs_theme{
 	}
 
 	public function admin_menu(){
-		add_theme_page( __( 'Rheinschmiede Theme', 'rs_theme' ), __( 'Theme Options' ) , 'edit_theme_options', 'rs-theme-options', array( $this, 'options_page' ) );
+		add_theme_page( __( 'Theme Settings', 'free_theme' ), __( 'Theme Options' ) , 'edit_theme_options', 'free-theme-options', array( $this, 'options_page' ) );
+		add_theme_page( __( 'Theme Presets', 'free_theme' ), __( 'Presets', 'free_theme' ) , 'edit_theme_options', 'free-theme-presets', array( $this, 'options_page' ) );
 	}
 	
 	public function options_page(){
