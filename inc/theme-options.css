@@ -3,17 +3,13 @@
  */
 div.theme-options-liquid-left {
 	float:left;
-	clear:left;
 	width:100%;
-	margin-right:-325px;
 }
 div.theme-options-left {
    margin-left: 5px;
-   margin-right: 325px;
 }
 div.theme-options-liquid-right {
-    clear: right;
-    float: right;
+    clear: both;
     width: 300px;
 }
 div.theme-options-right {
@@ -31,6 +27,9 @@ div.theme-options-right {
     min-height:50px;
     padding: 15px;
     margin: 0 auto 20px;
+}
+.theme-options-holder-content{
+	min-height:50px;
 }
 
 /*
@@ -54,17 +53,20 @@ div.theme-options-right {
 .box-settings, 
 .box-close{
 	float: right;
-    height: 29px;
-    width: 26px;	
+	cursor: pointer;
 }
 .box-name-arrow{
 	background: url("../../../../wp-admin/images/arrows.png") no-repeat scroll 5px 9px transparent;
+	height: 29px;
+    width: 26px;
 }
 .box-settings{
 	background: url("images/settings.png") no-repeat scroll transparent;
 	width:12px;
 	height:13px;
     margin-top: 2px;
+    margin-right: 8px;
+    float: left;
 }
 .box-close{
 	background: url("images/close.png") no-repeat scroll transparent;
@@ -79,6 +81,10 @@ div.theme-options-right {
     overflow: hidden;
     padding: 8px 10px;
     white-space: nowrap;
+}
+.theme-options-element-title p{
+	margin:1px 0 0;
+	float:left;
 }
 
 /*
@@ -105,17 +111,8 @@ div.theme-options-right {
 .theme-options-element-title{
 	padding: 7px 9px;
 }
+
 /* Correchtion of box arrow position for elements  */
-.theme-options-element-title .box-name-arrow{
-	margin-right: -10px;
-    margin-top: -10px;
-    z-index: 999;
-    cursor: pointer;
-}
-.theme-options-element-title .box-settings{
-    z-index: 999;
-    cursor: pointer;
-}
 .theme-options-element-content{
     background-color: #FCFCFC;
     border-bottom: 1px solid #DFDFDF;
@@ -135,6 +132,7 @@ div.theme-options-right {
 .show-settings{
 	display:block;
 	min-width: 26em;
+	z-index: 999
 }
 /* Hiding if element is in Element box */
 .theme-options-liquid-right .theme-options-element-title .box-settings, 
