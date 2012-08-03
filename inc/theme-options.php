@@ -112,7 +112,9 @@
 					<h3>Seiten</h3>
 				</div>
 				<div class="theme-options-holder">
-					<div class="theme-options-holder-content"></div>
+					<div class="theme-options-holder-content">
+						<?php free_render_admin(); ?>
+					</div>
 					<div class="clear"></div>
 				</div>
 				

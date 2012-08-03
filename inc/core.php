@@ -9,8 +9,8 @@ class rs_theme{
 	}
 	
 	function __construct(){
-		
 		$this->constants();
+		$this->includes();
 		
 		add_action( 'customize_register', array( $this, 'theme_customizer' ) );
 		add_action( 'admin_menu',  array( $this, 'admin_menu' ));
@@ -50,6 +50,14 @@ class rs_theme{
 		) );
 	}
 	
+	public function css(){
+	}
+	
+	public function js(){
+		wp_register_script( 'rs-theme-admin-less-js', RS_THEME_URLPATH . '/inc/twigkit/js/less-1.1.3.min.js' );
+		wp_enqueue_script( 'rs-theme-admin-less-js' );	
+	}
+	
 	public function admin_css(){
 		wp_register_style( 'rs-theme-admin-css', RS_THEME_URLPATH . '/inc/theme-options.css' );
 		wp_enqueue_style( 'rs-theme-admin-css' );	
@@ -62,6 +70,9 @@ class rs_theme{
 
 		wp_register_script( 'rs-theme-admin-js', RS_THEME_URLPATH . '/inc/theme-options.js' );
 		wp_enqueue_script( 'rs-theme-admin-js' );	
+		
+		wp_register_script( 'rs-theme-admin-less-js', RS_THEME_URLPATH . '/inc/twigkit/js/less-1.1.3.min.js' );
+		wp_enqueue_script( 'rs-theme-admin-less-js' );	
 	}
 
 	public function js_vars(){
@@ -81,6 +92,10 @@ class rs_theme{
 	
 	public function options_page(){
 		include( RS_THEME_FOLDER . '/inc/theme-options.php' );
+	}
+	
+	private function includes(){
+		include( RS_THEME_FOLDER . '/inc/layout.php' );
 	}
 	
 	private function constants(){
