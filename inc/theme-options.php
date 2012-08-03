@@ -13,6 +13,7 @@
 		</ul>
 		
 		<form name="theme-options">
+		<?php wp_nonce_field( 'save_theme_layout' ); ?> 
 			
 		<!-- Template elements //-->
 		<div class="theme-options-liquid-right">

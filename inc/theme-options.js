@@ -142,21 +142,17 @@
 		function save_theme_layout(){
 			var data = collect_data( $('.theme-options-holder-content .theme-options-element-content') );
 			
-			// console.log( data );
-			console.log( data );
-			console.log( JSON.stringify(data) );
-			// alert(JSON.stringify( data ));
+			console.log( free_ajax_url );
 			
-			// console.log( $('form').serializeArray() );
-			/*
-			$.post('updatePanels.php', 'data='+$.toJson(sortorder), function(response){  
-        		if(response=="success")  
-            		$("#console").html('<div class="success">Saved</div>').hide().fadeIn(1000);  
-        		setTimeout(function(){  
-            		$('#console').fadeOut(1000);  
-        		}, 2000);  
+			$.post( free_ajax_url, '_wp_nonce=' + free_nonce + '&data=' + JSON.stringify(data) , function( response ){  
+        		if( response == "success" )  
+            		$( "#console" ).html( '<div class="success">Saved</div>' ).hide().fadeIn( 1000 );  
+        		setTimeout( function(){  
+            		$( '#console' ).fadeOut( 1000 );  
+        		}, 
+        		2000
+        		);  
     		}); 
-    		*/
 		}
 		
 		console.log( 'End!' );
