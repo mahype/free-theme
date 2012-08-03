@@ -14,8 +14,10 @@ class rs_theme{
 		
 		add_action( 'customize_register', array( $this, 'theme_customizer' ) );
 		add_action( 'admin_menu',  array( $this, 'admin_menu' ));
+		add_action( 'wp_head',  array( $this, 'js_vars' ));
 		
 		if( 'free-theme-options' == $_GET['page'] ):
+			add_action( 'admin_head',  array( $this, 'js_vars' ));
 			add_action( 'admin_init',  array( $this, 'admin_css' ));
 			add_action( 'admin_init',  array( $this, 'admin_js' ));
 		endif;
@@ -60,6 +62,16 @@ class rs_theme{
 
 		wp_register_script( 'rs-theme-admin-js', RS_THEME_URLPATH . '/inc/theme-options.js' );
 		wp_enqueue_script( 'rs-theme-admin-js' );	
+	}
+
+	public function js_vars(){
+		$save_ajax_url = RS_THEME_URLPATH . '/inc/save-layout.php';
+		$free_nonce =  wp_create_nonce  ( 'save_theme_layout' );
+		
+		echo '<script type="text/javascript">';
+		echo 'var free_ajax_url = "' . $save_ajax_url . '";';
+		echo 'var free_nonce = "' . $free_nonce . '";';
+		echo '</script>';	
 	}
 
 	public function admin_menu(){
