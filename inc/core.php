@@ -9,18 +9,28 @@ class rs_theme{
 	}
 	
 	function __construct(){
-		$this->constants();
-		$this->includes();
 		
-		add_action( 'customize_register', array( $this, 'theme_customizer' ) );
-		add_action( 'admin_menu',  array( $this, 'admin_menu' ));
-		add_action( 'wp_head',  array( $this, 'js_vars' ));
+		$this->constants(); // Setting general Constants
+		$this->includes(); // Getting includes
 		
+		// Scripts for Frontent
+		add_action( 'after_setup_theme', array( $this, 'load_framework' ) ); // Loading Framework
+		add_action( 'admin_menu',  array( $this, 'admin_menu' )); // Adding admin Menu
+		add_action( 'customize_register', array( $this, 'theme_customizer' ) ); // Adding WP Frontent editing options
+		
+		add_action( 'wp_head',  array( $this, 'js_vars' )); // Setting global JS Vars for Frontent
+		
+		// Scripts for free theme settings pages
 		if( 'free-theme-options' == $_GET['page'] ):
-			add_action( 'admin_head',  array( $this, 'js_vars' ));
+			add_action( 'admin_head',  array( $this, 'js_vars' )); // Setting global JS Vars for Backend
 			add_action( 'admin_init',  array( $this, 'admin_css' ));
 			add_action( 'admin_init',  array( $this, 'admin_js' ));
 		endif;
+	}
+	
+	public function load_framework(){
+		$args['forms'] = array( 'free-config' );
+		tk_framework( $args ); 
 	}
 	
 	public function theme_customizer(){
@@ -95,6 +105,7 @@ class rs_theme{
 	}
 	
 	private function includes(){
+		include( RS_THEME_FOLDER . '/inc/tkf/loader.php' );
 		include( RS_THEME_FOLDER . '/inc/layout.php' );
 	}
 	

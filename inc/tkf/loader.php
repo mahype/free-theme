@@ -12,6 +12,7 @@ if( !function_exists( 'tkf_init_010' ) ){
 	
 	// Initialize function of this version which have to be have hooked
 	function tkf_init_010(){
+		echo 'Drin';
 		require_once( 'core.php' );
 	}
 	
@@ -81,10 +82,12 @@ if( !function_exists( 'tkf_init_010' ) ){
 				load_plugin_textdomain( $text_domain, false, dirname( plugin_basename( __FILE__ ) ) . $text_domain_path );
 			}
 		}
+
+		tk_load_framework();
 		
 		add_action( 'admin_init', 'tk_register_option_groups' ); // should not be here
 		
-		add_action( 'after_setup_theme', 'tk_load_framework', 1 );
+		// add_action( 'after_setup_theme', 'tk_load_framework', 1 );
 		
 		if( is_admin() )
 			add_action( 'admin_head', 'tk_load_jqueryui' );

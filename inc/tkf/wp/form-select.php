@@ -34,52 +34,22 @@ class TK_WP_Form_Select extends TK_Form_Select{
 			'extra' => '',
 			'default_value' => '',
 			'size' => '',
-<<<<<<< HEAD
 			'onchange' => '',
 			'css_classes' => '',
 			'rows' => '',
 			'cols' => '',
-			'extra' => '',
-=======
->>>>>>> themekraft/master
 			'multiselect' => FALSE,
-			'option_group' => $tk_form_instance_option_group,
-			'before_element' => '',
-			'after_element' => ''
+			'option_group' => $tk_form_instance_option_group
 		);
 		
 		$parsed_args = wp_parse_args( $args, $defaults);
 		extract( $parsed_args , EXTR_SKIP );
 		
-<<<<<<< HEAD
-		
-		// Getting value
-		$value = tk_get_value( $name, array( 'option_group' => $option_group, 'multi_index' => $multi_index, 'default_value' => $default_value ) );
-		
-		// Putting Args to parent
-		$args = array(
-			'id' => $id,
-			'name' => $name,
-			'value' => $value,
-			'size' => $size,
-			'onchange' => $onchange,
-			'css_classes' => $css_classes,
-			'rows' => '',
-			'cols' => '',
-			'extra' => $extra,
-			'multiselect' => $multiselect,
-			'multi_index' => $multi_index,
-			'before_element' => $before_element,
-			'after_element' => $after_element
-		);
-		parent::__construct( $args );
-=======
 		$field_name = tk_get_field_name( $name, array( 'option_group' => $option_group, 'multi_index' => $multi_index ) );
 		$value = tk_get_value( $name, array( 'option_group' => $option_group, 'multi_index' => $multi_index, 'default_value' => $default_value ) );
 		
 		$parsed_args['name'] = $field_name;
 		$parsed_args['value'] = $value;
->>>>>>> themekraft/master
 		
 		parent::__construct( $parsed_args );
 
