@@ -53,12 +53,7 @@ class TK_WP_Form_Hidden extends TK_Form_Hidden{
 
 }
 
-function tk_form_hidden( $name, $args = array(), $return_object = FALSE ){
+function tk_form_hidden( $name, $args = array(), $return = 'echo' ){
 	$hidden = new TK_WP_Form_Hidden( $name, $args );
-		
-	if( TRUE == $return_object ){
-		return $hidden;
-	}else{
-		return $hidden->get_html();
-	}
+	return tk_element_return( $hidden, $return );
 }

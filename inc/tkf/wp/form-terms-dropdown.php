@@ -58,12 +58,7 @@ class TK_WP_Form_Terms_Dropdown extends TK_Form_Terms_Dropdown {
 
 }
 
-function tk_form_terms_dropdown( $name, $args = array( ), $return_object = FALSE ) {
-    $terms_dropdown = new TK_WP_Form_Terms_Dropdown( $name, $args );
-
-    if ( TRUE == $return_object ) {
-	return $terms_dropdown;
-    } else {
-	return $terms_dropdown->get_html();
-    }
+function tk_form_terms_dropdown( $name, $args = array( ), $return = 'echo' ) {
+   $terms_dropdown = new TK_WP_Form_Terms_Dropdown( $name, $args );
+   return tk_element_return( $terms_dropdown, $return );
 }

@@ -58,12 +58,7 @@ class TK_WP_Form_Terms_Checklist extends TK_Form_Terms_Checklist {
 
 }
 
-function tk_form_terms_checklist( $name, $postID = 0, $args = array( ), $return_object = FALSE ) {
-    $terms_checklist = new TK_WP_Form_Terms_Checklist( $name, $postID, $args );
-
-    if ( TRUE == $return_object ) {
-	return $terms_checklist;
-    } else {
-	return $terms_checklist->get_html();
-    }
+function tk_form_terms_checklist( $name, $postID = 0, $args = array( ), $return = 'echo' ) {
+   $terms_checklist = new TK_WP_Form_Terms_Checklist( $name, $postID, $args );
+   return tk_element_return( $terms_checklist, $return );
 }

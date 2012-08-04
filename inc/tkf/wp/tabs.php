@@ -144,18 +144,13 @@ class TK_Jqueryui_Tabs extends TK_HTML{
 		}
 	}
 }
-function tk_tabs( $id = '', $elements = array(), $return_object = FALSE ){	
+function tk_tabs( $id = '', $elements = array(), $return = 'echo' ){	
 	$tabs = new	TK_Jqueryui_Tabs( $id );	
 	
-	foreach ( $elements AS $element ){
+	foreach ( $elements AS $element )
 		$tabs->add_tab( $element['id'], $element['title'], $element['content'] );
-	}
 
-	if( TRUE == $return_object ){
-		return $tabs;
-	}else{
-		return $tabs->get_html();
-	}
+	return tk_element_return( $tabs, $return );
 }
 
 ?>

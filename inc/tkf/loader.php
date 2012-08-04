@@ -12,7 +12,6 @@ if( !function_exists( 'tkf_init_010' ) ){
 	
 	// Initialize function of this version which have to be have hooked
 	function tkf_init_010(){
-		echo 'Drin';
 		require_once( 'core.php' );
 	}
 	
